@@ -182,7 +182,10 @@ class Config(object):
         if domain and not domain.startswith('http'):
             domain = "http://" + domain
         return domain
-
+        
+	def get_baseurl(self):
+        baseurl = (self.get_config('app') or {}).get('baseurl')
+        return baseurl
 
 # 配置实例
 CONFIG = Config()

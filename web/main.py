@@ -59,6 +59,7 @@ App.config.from_object(AppConfig)
 
 # API注册
 App.register_blueprint(apiv1_bp, url_prefix="/api/v1")
+App.register_blueprint(App, url_prefix=Config.get_baseurl)
 
 # 登录管理模块
 LoginManager = LoginManager()
